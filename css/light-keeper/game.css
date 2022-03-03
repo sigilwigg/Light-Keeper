@@ -1,0 +1,55 @@
+/* ========== ROOT ========== */
+:root {
+    --pixel-size: 2px;
+    --grid-cell: calc(var(--pixel-size) * 16);
+    
+    --num-cells-width: 13;
+    --num-cells-height: 10;
+}
+
+@media( min-width: 700px ) {
+    :root {
+        --pixel-size: 3px;
+    }
+}
+
+@media( min-width: 900px ) {
+    :root {
+        --pixel-size: 4px;
+    }
+}
+
+
+/* ========== FUNDIMENTALS ========== */
+html, body {
+   height: 100%;
+   margin: 0;
+}
+
+body {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   margin: 0;
+}
+
+
+/* ========== GAME ========== */
+.pixel-art {
+    image-rendering: pixelated;
+}
+
+.camera {
+    width: calc(var(--pixel-size) * 160);
+    height: calc(var(--pixel-size) * 144);
+    overflow: hidden;
+    background: #61ddf7;
+    position: relative;
+}
+
+.map {
+    image-rendering: pixelated;
+    background: green;
+    width: calc(var(--num-cells-width) * var(--grid-cell));
+    height: calc(var(--num-cells-height) * var(--grid-cell));
+}
