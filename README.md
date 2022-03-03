@@ -19,9 +19,9 @@ Create a game using only vanilla JS, HTML5, and CSS in 6-12 weeks. No external l
 ## Outline/Progress Sheet:
 
 **Basic Map Stuff:**
-[ ] Top down camera
-[ ] Player sprite animation
-[ ] Player movement w/ animation
-[ ] Tilemap system
-[ ] Player collision
-[ ] 
+- [ ] Top down camera
+- [ ] Player sprite animation
+- [ ] Player movement w/ animation
+- [ ] Tilemap system
+- [ ] Player collision
+- [ ] 
