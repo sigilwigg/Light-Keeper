@@ -31,3 +31,12 @@ The player's candle will dynamically light up the night as they walk around and 
 **Lighting**
 - [ ] General Lighting
 - [ ] Directional Lighting
+
+**Dialouge**
+- [ ] Pop-up box
+- [ ] Writing text to pop-up box
+
+**Sound**
+- [ ] Music Player System
+- [ ] Volume Options
+- [ ] Foley Sound System
