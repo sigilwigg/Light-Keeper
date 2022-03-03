@@ -1,7 +1,7 @@
 # Light Keeper (JS)
 
 A Game by Pike & Pen:
-- Wyatt H Williams: Code, Gameplay Design, Art
+- Wyatt H Williams: Code, Gameplay Design, Sprite/Tile Art
 - Jacob Murphy: Writing/Worldbuilding, Map Design
 
 Special Thanks:
@@ -16,7 +16,7 @@ Create a game using only vanilla JS, HTML5, and CSS in 6-12 weeks. No external l
 
 ---
 
-## Outline/Progress Sheet:
+## Outline/Todo Sheet:
 
 **Basic Map Stuff:**
 - [ ] Top down camera
@@ -24,4 +24,7 @@ Create a game using only vanilla JS, HTML5, and CSS in 6-12 weeks. No external l
 - [ ] Player movement w/ animation
 - [ ] Tilemap system
 - [ ] Player collision
-- [ ] 
+
+**Lighting**
+- [ ] General Lighting
+- [ ] Directional Lighting
