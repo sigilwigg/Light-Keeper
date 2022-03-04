@@ -15,3 +15,28 @@ let game = {
 }
 
 
+// ========== [///// INITIALIZATION /////] ==========
+// ----- player init -----
+let player = new Player(
+    playerElement,
+    0, 0,
+    parseInt(getComputedStyle(playerElement).getPropertyValue('width')),
+    parseInt(getComputedStyle(playerElement).getPropertyValue('height'))
+)
+
+// ----- input init -----
+Inputs.setUpInputEventListeners();
+
+
+// ========== [///// GAME LOOP /////] ==========
+const step = () => {
+    player.handleMovement();
+
+    window.requestAnimationFrame(() => {
+        step();
+    })
+}
+
+
+// ========== [///// START GAME /////] ==========
+step();
