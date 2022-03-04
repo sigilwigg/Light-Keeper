@@ -20,8 +20,8 @@ let map = new Map(mapElement);
 // ----- input init -----
 Inputs.setUpInputEventListeners();
 
-// ----- game obj init -----
-let game = {
+// ----- render obj init -----
+let renderer = {
     pixelSize: pixelSize,
     camera: camera,
     cameraOffsetLeft: pixelSize * 66,

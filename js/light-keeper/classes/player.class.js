@@ -9,7 +9,7 @@ class Player {
     }
 
     drawSelf() {
-        this.element.style.transform = `translate3d( ${this.x * game.pixelSize}px, ${this.y * game.pixelSize}px, 0 )`;
+        this.element.style.transform = `translate3d( ${this.x * renderer.pixelSize}px, ${this.y * renderer.pixelSize}px, 0 )`;
     }
 
     handleMovement() {

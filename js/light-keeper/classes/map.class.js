@@ -4,6 +4,6 @@ class Map {
     }
 
     drawSelf() {
-        this.element.style.transform = `translate3d( ${-player.x * game.pixelSize + game.cameraOffsetLeft}px, ${-player.y * game.pixelSize + game.cameraOffsetTop}px, 0 )`;
+        this.element.style.transform = `translate3d( ${-player.x * renderer.pixelSize + renderer.cameraOffsetLeft}px, ${-player.y * renderer.pixelSize + renderer.cameraOffsetTop}px, 0 )`;
     }
 }
