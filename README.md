@@ -22,7 +22,7 @@ The player's candle will dynamically light up the night as they walk around and 
 ## Outline/Todo Sheet:
 
 **Basic Map Stuff:**
-- [ ] Top down camera, Player sprite animation, Player movement w/ animation
+- [X] Top down camera, Player sprite animation, Player movement w/ animation
 - [ ] Tilemap system
 - [ ] Player collision
 
