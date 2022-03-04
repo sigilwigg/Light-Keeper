@@ -34,7 +34,5 @@ class Player {
         }
 
         this.element.setAttribute("walking", held_direction ? "true" : "false");
-
-        this.drawSelf();
     }
 }
