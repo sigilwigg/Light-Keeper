@@ -30,8 +30,14 @@ Inputs.setUpInputEventListeners();
 
 // ========== [///// GAME LOOP /////] ==========
 const step = () => {
+    // ----- event phase -----
     player.handleMovement();
 
+    // ----- draw phase -----
+    player.drawSelf();
+    map.drawSelf();
+
+    // ----- next step -----
     window.requestAnimationFrame(() => {
         step();
     })
