@@ -23,8 +23,30 @@ The player's candle will dynamically light up the night as they walk around and 
 
 **Basic Map Stuff:**
 - [X] Top down camera, Player sprite animation, Player movement w/ animation
-<details>
-    <summary>Week 1: Top-Down-Movement complete!</summary>
+- [ ] Tilemap system
+- [ ] Player collision
+
+**Lighting**
+- [ ] General Lighting
+- [ ] Directional Lighting
+
+**Dialouge**
+- [ ] Pop-up box
+- [ ] Writing text to pop-up box
+- [ ] Dialouge box (npc talking)
+- [ ] Cinematic Mode (disable inputs);
+
+**Sound**
+- [ ] Music Player System
+- [ ] Volume Options
+- [ ] Foley Sound System
+
+
+## Devlog:
+
+### Week 1:
+
+**Top-Down-Movement complete!**
     
     ![alt text](https://github.com/WyattHWilliams/Light-Keeper/blob/feat-top-down-movement/docs/top-down-movement/top-down.gif)
 
@@ -56,22 +78,3 @@ The player's candle will dynamically light up the night as they walk around and 
         })
     }
     ```
-  
-</details>
-- [ ] Tilemap system
-- [ ] Player collision
-
-**Lighting**
-- [ ] General Lighting
-- [ ] Directional Lighting
-
-**Dialouge**
-- [ ] Pop-up box
-- [ ] Writing text to pop-up box
-- [ ] Dialouge box (npc talking)
-- [ ] Cinematic Mode (disable inputs);
-
-**Sound**
-- [ ] Music Player System
-- [ ] Volume Options
-- [ ] Foley Sound System
