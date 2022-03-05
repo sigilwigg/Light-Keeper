@@ -23,6 +23,18 @@ The player's candle will dynamically light up the night as they walk around and 
 
 **Basic Map Stuff:**
 - [X] Top down camera, Player sprite animation, Player movement w/ animation
+<details>
+  <summary>Spoiler warning</summary>
+  
+  ![alt text][top-down-movement-gif]
+
+
+  
+  ```javascript
+  console.log("I'm a code block!");
+  ```
+  
+</details>
 - [ ] Tilemap system
 - [ ] Player collision
 
