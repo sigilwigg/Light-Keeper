@@ -11,14 +11,31 @@ class Map {
     }
 
     makeTile(tile) {
+        // ----- make the elements -----
         let newTile = document.createElement("div");
+        let newTileset = document.createElement("div");
         let mapLayer = this.element.querySelector(`.tile-layer.${tile.layer}`);
 
+        // ----- assign tile class -----
         newTile.classList.add("tile")
-        newTile.classList.add(`${tile.type}`);
+
+        // ----- position the tile -----
         newTile.style.top = `${tile.y * renderer.tileSize}px`;
         newTile.style.left = `${tile.x * renderer.tileSize}px`;
 
+        // ----- assign tileset class -----
+        newTileset.classList.add(`${tile.type}`)
+
+        // ----- set tile variation -----
+        /*  this is a class that moves the background
+        *   to a specific tile in the set
+        */
+        if (tile.variation) {
+            newTileset.classList.add(`${variation}`);
+        }
+
+        // ----- finish and add to map -----
+        newTile.append(newTileset);
         mapLayer.append(newTile);
 
         return newTile;
