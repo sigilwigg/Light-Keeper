@@ -122,7 +122,7 @@ const testMapData = {
 
 And groovy goomba! After adding some map-gen funcs to our map class:
 
-![tile map img](https://github.com/WyattHWilliams/Light-Keeper/blob/feat-top-down-movement/docs/tile-map-system/Screenshot_1.png)
+![tile map img](https://github.com/WyattHWilliams/Light-Keeper/tree/feat-tilemap-with-tilesets/docs/tile-map-system/Screenshot_1.png)
 
 But these tiles are just divs with a css background color. What about selecting tiles from a tileset??
 
