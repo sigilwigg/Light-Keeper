@@ -83,3 +83,14 @@ const step = () => {
 ```
 
 </details>
+
+<details>
+    <summary>
+    The Tile-Map!
+    </summary>
+    
+Why a tile map? By using a tile map I can set myself up for doing cool stuff later with tesselation, sprite animations as part of the terrain, and really really cool stuff involving z-depth(for walking behind objects or seeing if the player is on a hill). Additionaly, my plan for doing some nifty dynamic lighting later involves using a tile based system.
+
+But first, I don't want to draw every map and then translate it to code every time I need to make a change. My goal is to give the program an array of basic tile information (ie. put grass here, stone floor here, the foundation of a building here) and then let the code figure out tesselation, animations, and extra decorations on its own.
+
+</details>
