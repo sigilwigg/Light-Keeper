@@ -1,0 +1,46 @@
+/* ========== ROOT ========== */
+:root {
+    --map-width: calc(var(--num-tiles-width) * var(--tile-size));
+    --map-height: calc(var(--num-tiles-height) * var(--tile-size));
+
+    --num-tiles-width: 13;
+    --num-tiles-height: 10;
+}
+
+
+/* ========== FUNDAMENTALS ========== */
+.map, .tile-layer {
+    image-rendering: pixelated;
+    width: var(--map-width);
+    height: var(--map-height);
+}
+
+.tile-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+
+/* ========== TILE LAYERS ========== */
+/* tile layers can be 1 - 9 (z-index: 1 - 9) */
+.tile-layer.floor {
+    z-index: 1;
+}
+
+
+/* ========== TILES ========== */
+.tile {
+    position: absolute;
+    width: calc(var(--tile-size));
+    height: calc(var(--tile-size));
+    overflow: hidden;
+}
+
+.tile.sidewalk {
+    background: grey;
+}
+
+.tile.grass {
+    background: green
+}
