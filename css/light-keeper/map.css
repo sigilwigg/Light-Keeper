@@ -37,8 +37,12 @@
     overflow: hidden;
 }
 
-.tile.sidewalk {
-    background: grey;
+.tile .sidewalk {
+    position: absolute;
+    background: url("../../images/sidewalk.png") no-repeat no-repeat;
+    background-size: 100%;
+    width: calc( var(--tile-size) * 6);
+    height: calc( var(--tile-size) * 13);
 }
 
 .tile.grass {
