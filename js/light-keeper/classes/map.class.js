@@ -1,7 +1,12 @@
 class Map {
     constructor(_element, _mapData) {
         this.element = _element;
-        this.tiles = {};
+        this.tiles = {
+            floor: {},
+            floorDeco: {},
+            obj: {},
+            objDeco: {},
+        };
 
         this.generateMap(_mapData);
     }
@@ -45,10 +50,9 @@ class Map {
         tileData.forEach(tile => {
             let tileElement = this.makeTile(tile);
 
-            this.tiles[`${tile.x},${tile.y}`] = {
+            this.tiles[`${tile.layer}`][`${tile.x},${tile.y}`] = {
                 x: tile.x,
                 y: tile.y,
-                layer: tile.layer,
                 type: tile.type,
                 element: tileElement,
             }
