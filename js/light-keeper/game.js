@@ -6,6 +6,15 @@ const pixelSize = parseInt(getComputedStyle(document.documentElement).getPropert
 
 
 // ========== [///// INITIALIZATION /////] ==========
+// ----- render obj init -----
+let renderer = {
+    pixelSize: pixelSize,
+    tileSize: pixelSize * 8,
+    camera: camera,
+    cameraOffsetLeft: pixelSize * 66,
+    cameraOffsetTop: pixelSize * 42,
+}
+
 // ----- player init -----
 let player = new Player(
     playerElement,
@@ -15,18 +24,10 @@ let player = new Player(
 )
 
 // ----- map init -----
-let map = new Map(mapElement);
+let map = new Map(mapElement, testMapData);
 
 // ----- input init -----
 Inputs.setUpInputEventListeners();
-
-// ----- render obj init -----
-let renderer = {
-    pixelSize: pixelSize,
-    camera: camera,
-    cameraOffsetLeft: pixelSize * 66,
-    cameraOffsetTop: pixelSize * 42,
-}
 
 
 // ========== [///// GAME LOOP /////] ==========
