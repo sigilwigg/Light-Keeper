@@ -46,7 +46,8 @@ The player's candle will dynamically light up the night as they walk around and 
 
 ### Week 1:
 
-**Top-Down-Movement complete!**
+<details>
+  <summary>**Top-Down-Movement complete!**</summary>
     
 ![alt text](https://github.com/WyattHWilliams/Light-Keeper/blob/feat-top-down-movement/docs/top-down-movement/top-down.gif)
 
@@ -78,3 +79,5 @@ const step = () => {
     })
 }
 ```
+
+</details>
