@@ -24,15 +24,38 @@ The player's candle will dynamically light up the night as they walk around and 
 **Basic Map Stuff:**
 - [X] Top down camera, Player sprite animation, Player movement w/ animation
 <details>
-  <summary>Spoiler warning</summary>
-  
-  ![alt text][top-down-movement-gif]
+    <summary>Week 1: Top-Down-Movement complete!</summary>
+    
+    ![alt text](https://github.com/WyattHWilliams/Light-Keeper/blob/feat-top-down-movement/docs/top-down-movement/top-down.gif)
 
+    **How It Was Made:**
 
-  
-  ```javascript
-  console.log("I'm a code block!");
-  ```
+    After following [this very useful tutorial](https://www.youtube.com/watch?v=H3Fn33lYuE0&ab_channel=DrewConley) to the letter, I re-wrote the code for better readability and seperated out concerns. I also conformed to some organizational best-practices for game development.
+
+    The trick to the whole system is using JS to translate the absolutaly fixed player and map elements as you move around. The player never really moves, we actually move the map opposite of the player's input, and then re-draw the player in proper relation to the moved map. The "camera" then hides the overflow, which gives the illusion of player movement!
+
+    ![img](https://github.com/WyattHWilliams/Light-Keeper/blob/feat-top-down-movement/docs/top-down-movement/Screenshot_1.png)
+
+    I seperated input logic, map logic, and player logic into their own classes. This will improve git flow as things get more complicated, but also keep things manageable and tidy-clean for me.
+
+    In game development, you also seperate out the different "phases" of each animation step. This mainly has to do with the way game engines run, but for our purposes it does help to keep everything as modular as possible.Therefor I seperated out the draw phase and input handing phases of each game step, with the respective logic also seperated.
+
+    ```javascript
+    // ========== [///// GAME LOOP /////] ==========
+    const step = () => {
+        // ----- event phase -----
+        player.handleMovement();
+
+        // ----- draw phase -----
+        player.drawSelf();
+        map.drawSelf();
+
+        // ----- next step -----
+        window.requestAnimationFrame(() => {
+            step();
+        })
+    }
+    ```
   
 </details>
 - [ ] Tilemap system
