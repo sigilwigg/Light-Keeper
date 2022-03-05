@@ -1,9 +1,9 @@
 /* ========== PLAYER ========== */
 /* ----- basic ----- */
 .player {
-    z-index: 99;
-   width: calc( var(--grid-cell)* 2 );
-   height: calc( var(--grid-cell)* 2 );
+   z-index: 99;
+   width: calc( var(--cell-size) * 2 );
+   height: calc( var(--cell-size) * 2 );
    position: absolute;
    overflow:hidden;
 }
@@ -13,8 +13,8 @@
    position: absolute;
    background: url("https://assets.codepen.io/21542/DemoRpgCharacter.png") no-repeat no-repeat;
    background-size: 100%;
-   width: calc( var(--grid-cell) * 8 );
-   height: calc( var(--grid-cell) * 8 );
+   width: calc( var(--cell-size) * 8 );
+   height: calc( var(--cell-size) * 8 );
 }
 
 .player[facing="right"] .spritesheet {
