@@ -33,6 +33,8 @@ The player's candle will dynamically light up the night as they walk around and 
 **Dialouge**
 - [ ] Pop-up box
 - [ ] Writing text to pop-up box
+- [ ] Dialouge box (npc talking)
+- [ ] Cinematic Mode (disable inputs);
 
 **Sound**
 - [ ] Music Player System
