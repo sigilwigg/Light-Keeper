@@ -129,6 +129,35 @@ But these tiles are just divs with a css background color. What about selecting 
 
 **Tileset-Based Tiling**
 
+For this we use the same css that we used for managing the player's spritesheet: we set a child div inside the tile with a background of the tileset, then change the background x and y depending on what tile we want. In JS, we use our tile data to assign the classes related to all this.
+
+```javascript
+makeTile(tile) {
+    // ----- make the elements -----
+    let newTile = document.createElement("div");
+    let newTileset = document.createElement("div");
+    let mapLayer = this.element.querySelector(`.tile-layer.${tile.layer}`);
+
+    // ----- assign tile class -----
+    newTile.classList.add("tile")
+
+    // ----- position the tile -----
+    newTile.style.top = `${tile.y * renderer.tileSize}px`;
+    newTile.style.left = `${tile.x * renderer.tileSize}px`;
+
+    // ----- assign tileset class -----
+    newTileset.classList.add(`${tile.type}`)
+
+    // ----- finish and add to map -----
+    newTile.append(newTileset);
+    mapLayer.append(newTile);
+}
+```
+
+After using this with a new "sidewalk" class we get this:
+
+![sidewalk img](https://github.com/WyattHWilliams/Light-Keeper/blob/feat-tilemap-with-tilesets/docs/tile-map-system/sidewalk.png?raw=true)
+
 **NOTE:** I also did a pretty fun stress-test to see how many fully-tiled layers I could have on-screen at a time before the browser quit. Which was a suprisingly high number. Then I tested the browser's limits with setting each of those tiles to have it's own sprite animation. Again, a surprisingly high limit(that i'm sure also heavily depends on your computer's gusto as well as the browser). The result of many many 8pixel tiles all animating at once was pretty trippy, unfortunately I forgot to take a screenshot before I moved on. (I was also a fool and deleted the branch ...)
 
 </details>
