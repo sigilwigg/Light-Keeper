@@ -120,6 +120,9 @@ const testMapData = {
 }
 ```
 
+
+Ok, but why not just a 2d array that stores a bunch of objects? Really just for quick look-ups later down the line. I know this data isn't usually the data we'll be looking at, but either way I like this.
+
 And groovy goomba! After adding some map-gen funcs to our map class:
 
 ![tile-map-img](https://github.com/WyattHWilliams/Light-Keeper/blob/feat-tilemap-with-tilesets/docs/tile-map-system/Screenshot_1.png?raw=true)
