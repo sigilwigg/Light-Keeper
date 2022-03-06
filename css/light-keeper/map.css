@@ -43,8 +43,22 @@
     background-size: 100%;
     width: calc( var(--tile-size) * 6);
     height: calc( var(--tile-size) * 13);
+    background-position-y: calc( var(--pixel-size) * 0);
 }
 
 .tile.grass {
     background: green
+}
+
+
+/* ========== VARIATIONS ========== */
+/* ----- sidewalk ----- */
+.sidewalk.v-1 {
+    background-position-x: calc( var(--pixel-size) * 0);
+}
+.sidewalk.v-2 {
+    background-position-x: calc( var(--pixel-size) * -8);
+}
+.sidewalk.v-3 {
+    background-position-x: calc( var(--pixel-size) * -16);
 }
