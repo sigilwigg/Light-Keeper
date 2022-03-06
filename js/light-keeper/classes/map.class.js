@@ -28,15 +28,17 @@ class Map {
         newTile.style.top = `${tile.y * renderer.tileSize}px`;
         newTile.style.left = `${tile.x * renderer.tileSize}px`;
 
-        // ----- assign tileset class -----
+        // ----- assign tileset classes -----
+        newTileset.classList.add("pixel-art");
         newTileset.classList.add(`${tile.type}`)
 
         // ----- set tile variation -----
         /*  this is a class that moves the background
         *   to a specific tile in the set
         */
-        if (tile.variation) {
-            newTileset.classList.add(`${variation}`);
+        if (tile.variation == true) {
+            let vNum = Math.floor(Math.random() * 3 + 1);
+            newTileset.classList.add(`v-${vNum}`);
         }
 
         // ----- finish and add to map -----
