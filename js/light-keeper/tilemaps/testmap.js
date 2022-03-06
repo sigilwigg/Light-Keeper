@@ -2,6 +2,7 @@ const testMapData = {
     widthInTiles: 3,
     heightInTiles: 3,
     tileData: [
+        // ----- floor -----
         { x: 0, y: 0, layer: "floor", type: "sidewalk", variation: true },
         { x: 0, y: 1, layer: "floor", type: "sidewalk", variation: true },
         { x: 0, y: 2, layer: "floor", type: "sidewalk", variation: true },
