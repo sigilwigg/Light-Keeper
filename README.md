@@ -161,6 +161,45 @@ After using this with a new "sidewalk" class we get this:
 
 ![sidewalk img](https://github.com/WyattHWilliams/Light-Keeper/blob/feat-tilemap-with-tilesets/docs/tile-map-system/sidewalk.png?raw=true)
 
+Then! for artistic reasons, lets use the extra sidewalk tiles I made as variations. A little method here:
+
+```javascript
+makeTile(tile) {
+    ***
+
+    // ----- set tile variation -----
+    /*  this is a class that moves the background
+    *   to a specific tile in the set
+    */
+    if (tile.variation == true) {
+        let vNum = Math.floor(Math.random() * 3 + 1);
+        newTileset.classList.add(`v-${vNum}`);
+    }
+
+    ***
+}
+```
+
+And a little css there:
+
+```css
+/* ========== VARIATIONS ========== */
+/* ----- sidewalk ----- */
+.sidewalk.v-1 {
+    background-position-x: calc( var(--pixel-size) * 0);
+}
+.sidewalk.v-2 {
+    background-position-x: calc( var(--pixel-size) * -8);
+}
+.sidewalk.v-3 {
+    background-position-x: calc( var(--pixel-size) * -16);
+}
+```
+
+boom:
+
+![variations](https://github.com/WyattHWilliams/Light-Keeper/blob/feat-tilemap-with-tilesets/docs/tile-map-system/variations.png?raw=true)
+
 **NOTE:** I also did a pretty fun stress-test to see how many fully-tiled layers I could have on-screen at a time before the browser quit. Which was a suprisingly high number. Then I tested the browser's limits with setting each of those tiles to have it's own sprite animation. Again, a surprisingly high limit(that i'm sure also heavily depends on your computer's gusto as well as the browser). The result of many many 8pixel tiles all animating at once was pretty trippy, unfortunately I forgot to take a screenshot before I moved on. (I was also a fool and deleted the branch ...)
 
 </details>
