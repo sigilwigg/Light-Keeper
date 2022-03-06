@@ -46,8 +46,14 @@
     background-position-y: calc( var(--pixel-size) * 0);
 }
 
-.tile.grass {
-    background: green
+/* TODO: grass needs tileset!!! */
+.tile .grass {
+    position: absolute;
+    background: green;
+    background-size: 100%;
+    width: calc( var(--tile-size) * 1);
+    height: calc( var(--tile-size) * 1);
+    background-position-y: calc( var(--pixel-size) * 0);
 }
 
 
