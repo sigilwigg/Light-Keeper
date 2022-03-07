@@ -1,0 +1,79 @@
+/* ========== MISC ========== */
+.collision-box {
+   z-index: 999;
+   position: absolute;
+   background: red;
+   opacity: 0;
+}
+
+
+/* ========== PLAYER ========== */
+/* ----- basic ----- */
+.player {
+   z-index: 99;
+   width: calc( var(--cell-size) * 1 );
+   height: calc( var(--cell-size) * 1 );
+   position: absolute;
+   overflow:hidden;
+}
+
+.player .collision-box {
+   width: calc( var(--cell-size) * .5 );
+   height: calc( var(--cell-size) * .38 );
+   left: calc( var(--cell-size) * .25 );
+   top: calc( var(--cell-size) * .56);
+}
+
+/* ----- spritesheet ----- */
+.player .spritesheet {
+   position: absolute;
+   background: url("../../images/player.png") no-repeat no-repeat;
+   background-size: 100%;
+   width: calc( var(--cell-size) * 4 );
+   height: calc( var(--cell-size) * 4 );
+}
+
+/* ----- walking sprites ----- */
+.player[facing="right"][walking=true] .spritesheet {
+   background-position-y: calc( var(--pixel-size) * -48 );
+}
+.player[facing="up"][walking=true] .spritesheet {
+   background-position-y: calc( var(--pixel-size) * -112 );
+}
+.player[facing="left"][walking=true] .spritesheet {
+   background-position-y: calc( var(--pixel-size) * -80 );
+}
+.player[facing="down"][walking=true] .spritesheet {
+   background-position-y: calc( var(--pixel-size) * -16 );
+}
+.player[walking="true"] .spritesheet {
+   animation: walkAnimation 0.4s steps(4) infinite; 
+}
+
+/* ----- idle sprites ----- */
+.player[facing="right"][walking=false] .spritesheet {
+   background-position-y: calc( var(--pixel-size) * -32 );
+}
+.player[facing="up"][walking=false] .spritesheet {
+   background-position-y: calc( var(--pixel-size) * -96 );
+}
+.player[facing="left"][walking=false] .spritesheet {
+   background-position-y: calc( var(--pixel-size) * -64 );
+}
+.player[facing="down"][walking=false] .spritesheet {
+   background-position-y: calc( var(--pixel-size) * -0 );
+}
+.player[walking="false"] .spritesheet {
+   animation: walkAnimation 0.6s steps(4) infinite; 
+}
+
+
+/* ========== ANIMATIONS ========== */
+@keyframes walkAnimation {
+   from {
+      transform: translate3d(0%,0%,0);
+   }
+   to {
+      transform: translate3d(-100%,0%,0);
+   }
+}

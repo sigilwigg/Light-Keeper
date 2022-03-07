@@ -1,0 +1,86 @@
+/* ========== ROOT ========== */
+:root {
+    --map-width: calc(var(--num-tiles-width) * var(--tile-size));
+    --map-height: calc(var(--num-tiles-height) * var(--tile-size));
+
+    --num-tiles-width: 13;
+    --num-tiles-height: 10;
+}
+
+
+/* ========== FUNDAMENTALS ========== */
+.map, .tile-layer {
+    image-rendering: pixelated;
+    width: var(--map-width);
+    height: var(--map-height);
+}
+
+.tile-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+
+/* ========== TILE LAYERS ========== */
+/* tile layers can be 1 - 9 (z-index: 1 - 9) */
+.tile-layer.floor {
+    z-index: 1;
+}
+
+.tile-layer.obj {
+    z-index: 2;
+}
+
+
+/* ========== TILES ========== */
+.tile {
+    position: absolute;
+    width: calc(var(--tile-size));
+    height: calc(var(--tile-size));
+    overflow: hidden;
+}
+
+
+/* ========== TILESETS ========== */
+/* ----- floor tilesets ----- */
+.tile .sidewalk {
+    position: absolute;
+    background: url("../../../images/sidewalk.png") no-repeat no-repeat;
+    background-size: 100%;
+    width: calc( var(--tile-size) * 6);
+    height: calc( var(--tile-size) * 13);
+    background-position-y: calc( var(--pixel-size) * 0);
+}
+
+/* TODO: grass needs tileset!!! */
+.tile .grass {
+    position: absolute;
+    background: green;
+    background-size: 100%;
+    width: calc( var(--tile-size) * 1);
+    height: calc( var(--tile-size) * 1);
+    background-position-y: calc( var(--pixel-size) * 0);
+}
+
+/* ----- obj tilesets ----- */
+.tile .shrine {
+    position: absolute;
+    background: url("../../../images/shrine.png") no-repeat no-repeat;
+    background-size: 100%;
+    width: calc( var(--tile-size) * 4);
+    height: calc( var(--tile-size) * 7);
+}
+
+
+/* ========== VARIATIONS ========== */
+/* ----- sidewalk ----- */
+.sidewalk.v-1 {
+    background-position-x: calc( var(--pixel-size) * 0);
+}
+.sidewalk.v-2 {
+    background-position-x: calc( var(--pixel-size) * -8);
+}
+.sidewalk.v-3 {
+    background-position-x: calc( var(--pixel-size) * -16);
+}

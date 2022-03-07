@@ -1,0 +1,5 @@
+/* ========== SHRINE ========== */
+.obj .shrine {
+    background-position-x: calc( var(--pixel-size) * 0);
+    background-position-y: calc( var(--pixel-size) * -8);
+}

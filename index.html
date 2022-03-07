@@ -9,7 +9,13 @@
     <!-- #endregion meta -->
 
     <!-- #region stylesheets -->
-    <!-- light keeper game -->
+    <!-- map css -->
+    <link rel="stylesheet" href="./css/light-keeper/map/map.css">
+    <link rel="stylesheet" href="./css/light-keeper/map/objects.css">
+
+    <!-- entities css -->
+    <link rel="stylesheet" href="./css/light-keeper/entities.css">
+
     <link rel="stylesheet" href="./css/light-keeper/game.css">
     <!-- #endregion stylesheets -->
 
@@ -17,11 +23,36 @@
 </head>
 
 <body>
+    <div class="camera">
+        <div class="map pixel-art">
+            <!-- #region map elements -->
+            <div class="tile-layer floor"></div>
+            <div class="tile-layer obj"></div>
+            <!-- #endregion -->
 
+            <!-- #region entity elements -->
+            <div class="player" facing="down" walking="false" style="transform: translate3d(0px, 0px, 0px);">
+                <div class="spritesheet pixel-art"></div>
+                <div class="collision-box"></div>
+            </div>
+            <!-- $endregion -->
+        </div>
+    </div>
 </body>
 
 <!-- #region scripts -->
 <!-- light keeper game -->
+<!-- map data -->
+<script src="./js/light-keeper/tilemaps/testmap.js"></script>
+
+<!-- init -->
+<script src="./js/light-keeper/enums.js"></script>
+<script src="./js/light-keeper/classes/inputs.class.js"></script>
+<script src="./js/light-keeper/classes/physics.class.js"></script>
+
+<script src="./js/light-keeper/classes/map.class.js"></script>
+<script src="./js/light-keeper/classes/player.class.js"></script>
+
 <script src="./js/light-keeper/game.js"></script>
 <!-- #endregion -->
 
