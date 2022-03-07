@@ -203,3 +203,39 @@ boom:
 **NOTE:** I also did a pretty fun stress-test to see how many fully-tiled layers I could have on-screen at a time before the browser quit. Which was a suprisingly high number. Then I tested the browser's limits with setting each of those tiles to have it's own sprite animation. Again, a surprisingly high limit(that i'm sure also heavily depends on your computer's gusto as well as the browser). The result of many many 8pixel tiles all animating at once was pretty trippy, unfortunately I forgot to take a screenshot before I moved on. (I was also a fool and deleted the branch ...)
 
 </details>
+
+<details>
+    <summary>
+    Player Collisions!
+    </summary>
+
+![collisions gif](https://github.com/WyattHWilliams/Light-Keeper/blob/feat-player-collisions/docs/player-collisions/collision.gif?raw=true)
+
+**How'd it done?**
+
+Easy! First, I attatched a div with a new "collision-box" class to our player with the following css:
+
+```css
+.collision-box {
+   z-index: 999;
+   position: absolute;
+   background: red;
+   opacity: 0;
+}
+```
+
+(I change the opacity to 0.75 whenever I need to see where the box is!)
+
+Next I made a new entry on our testing tilemap that looks like this:
+
+```javascript
+{ x: 5, y: 5, layer: "obj", type: "shrine", variation: false },
+```
+
+This entry is for a "shrine" tile to be set onto the "obj" layer of our map div. Just like with floor tiles, we look at the x,y values, make a new tile div and then translate the tile on the map accordingly.
+
+However, the shrine object that I drew is actually 2 tiles tall. I only want the player to collide with the bottom tile of the shrine though. So I'll put the bottom tile in the "obj" layer and the top tile on the "obj-deco" layer. I'll go over the "obj-deco" and "floor-deco" layers when I get to auto-tiling tesselation. But for now, just know that it won't look like a shrine in game for now:
+
+![collisions gif](https://github.com/WyattHWilliams/Light-Keeper/blob/feat-player-collisions/docs/player-collisions/shrine-bottom.png?raw=true)
+
+</details>
