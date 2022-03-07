@@ -14,5 +14,8 @@ const testMapData = {
         { x: 2, y: 0, layer: "floor", type: "sidewalk", variation: true },
         { x: 2, y: 1, layer: "floor", type: "sidewalk", variation: true },
         { x: 2, y: 2, layer: "floor", type: "sidewalk", variation: true },
+
+        // ----- objects -----
+        { x: 5, y: 5, layer: "obj", type: "shrine", variation: false },
     ]
 }
