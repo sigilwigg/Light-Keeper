@@ -11,8 +11,8 @@
 /* ----- basic ----- */
 .player {
    z-index: 99;
-   width: calc( var(--cell-size) * 2 );
-   height: calc( var(--cell-size) * 2 );
+   width: calc( var(--cell-size) * 1 );
+   height: calc( var(--cell-size) * 1 );
    position: absolute;
    overflow:hidden;
 }
