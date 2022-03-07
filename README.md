@@ -259,4 +259,8 @@ collisionDirection(r1, r2) {
     }
 ```
 
+and we attatch it as a static method to our brand-new physics class (just for clean organization).
+
+Finally, we need to use this method inside the player movement method. What we want to know is if our player's collision-box is touching any tile that belongs to our "obj" layer.
+
 </details>
