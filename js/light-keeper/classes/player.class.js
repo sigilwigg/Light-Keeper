@@ -13,18 +13,18 @@ class Player {
 
     handleMovement() {
         const held_direction = Inputs.held_directions[0];
-        let projectedPlacement = this.collision_box.getBoundingClientRect();
+        let projectedPlacement = this.collisionBox.getBoundingClientRect();
 
         function checkForCollision(projection) {
             // ----- list for mult. collision directions -----
             let collisionList = [];
             let collision = undefined;
 
-            // ----- check obj list -----
-            for (let obj of objList) {
+            // ----- check map objects -----
+            for (let key in map.tiles.obj) {
                 collision = Physics.collisionDirection(
                     projection,
-                    obj.getBoundingClientRect()
+                    map.tiles[key].getBoundingClientRect()
                 )
                 if (collision) collisionList.push(collision);
             }
