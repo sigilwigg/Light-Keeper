@@ -24,7 +24,7 @@ class Player {
             for (let key in map.tiles.obj) {
                 collision = Physics.collisionDirection(
                     projection,
-                    map.tiles[key].getBoundingClientRect()
+                    map.tiles.obj[key].element.getBoundingClientRect()
                 )
                 if (collision) collisionList.push(collision);
             }
