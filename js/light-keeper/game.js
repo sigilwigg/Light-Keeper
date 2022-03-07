@@ -1,6 +1,7 @@
 // ========== [///// DOM SELECTION /////] ==========
 const camera = document.querySelector(".camera");
 const playerElement = document.querySelector(".player");
+const playerCollisionBox = document.querySelector(".player .collision-box");
 const mapElement = document.querySelector(".map");
 const pixelSize = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--pixel-size'));
 
@@ -19,8 +20,7 @@ let renderer = {
 let player = new Player(
     playerElement,
     0, 0,
-    parseInt(getComputedStyle(playerElement).getPropertyValue('width')),
-    parseInt(getComputedStyle(playerElement).getPropertyValue('height'))
+    playerCollisionBox,
 )
 
 // ----- map init -----
