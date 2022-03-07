@@ -26,7 +26,7 @@ The player's candle will dynamically light up the night as they walk around and 
 - [X] Tilemap system
 - [X] Sprite-based Tiling (tile-sets)
 - [ ] Auto-tiling tesselation
-- [ ] Player collision
+- [X] Player collision
 
 **Lighting**
 - [ ] General Lighting
