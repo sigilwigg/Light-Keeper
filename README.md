@@ -261,6 +261,75 @@ collisionDirection(r1, r2) {
 
 and we attatch it as a static method to our brand-new physics class (just for clean organization).
 
-Finally, we need to use this method inside the player movement method. What we want to know is if our player's collision-box is touching any tile that belongs to our "obj" layer.
+Finally, we need to use this method inside the player movement method. What we want to know is if our player's collision-box is touching any tile that belongs to our "obj" layer. We then want to get the direction of the player's side that's touching and prevent movement in that direction. To FURTHER complicated things, we don't want to detect if the player is already colliding, we need to know if they will collide.
+
+Therfore, we're going to
+
+1) copy the player's collision box position data into "projectedPlacement"
+
+```javascript
+// "this" refers to player
+let projectedPlacement = this.collisionBox.getBoundingClientRect();
+```
+
+2) check the input direction and add the speed. BUT we're going to add the speed to the projected placement instead of the player's position. Now the data in projected placement reflects where the player wants to move to.
+
+```javascript
+if (held_direction) {
+            switch (held_direction) {
+                // for each direction
+                case DIRECTIONS.right:
+                    projectedPlacement.x += this.speed;
+                    // other code etc. past this point ...
+```
+
+3) call for collision detection
+
+```javascript
+if (held_direction) {
+            switch (held_direction) {
+                // for each direction
+                case DIRECTIONS.right:
+                    projectedPlacement.x += this.speed;
+                    if (!checkForCollision(projectedPlacement).includes(held_direction)) {
+                        this.x += this.speed;
+                    }
+                    break;
+                    // other code etc. past this point ...
+```
+
+4) here's our collision check method, which loops through all "objects" on the map and if there's a collision, the physics collision algo will return which direction is colliding and we'll add that to our list of collisions:
+
+```javascript
+function checkForCollision(projection) {
+            // ----- list for mult. collision directions -----
+            let collisionList = [];
+            let collision = undefined;
+
+            // ----- check map objects -----
+            for (let key in map.tiles.obj) {
+                collision = Physics.collisionDirection(
+                    projection,
+                    map.tiles.obj[key].element.getBoundingClientRect()
+                )
+                if (collision) collisionList.push(collision);
+            }
+
+            return collisionList;
+        }
+```
+
+**NOTE:** we can totally optimize this later!
+
+5) then this bit of code (as seen in step 3) will only move the player if the held direction is not found in the collisions list!
+
+```javascript
+// "this" refers to player
+if (!checkForCollision(projectedPlacement).includes(held_direction)) {
+    this.x += this.speed;
+}
+```
+
+I gotta say. I'm really proud of myself for this one. For example, I store the collision directions in a list so that the player can know it's colliding with more than one thing at a time. There are so many little neat tricks that I had to figure out to make this whole process work correctly.
 
 </details>
