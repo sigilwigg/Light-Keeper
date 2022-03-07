@@ -236,6 +236,27 @@ This entry is for a "shrine" tile to be set onto the "obj" layer of our map div.
 
 However, the shrine object that I drew is actually 2 tiles tall. I only want the player to collide with the bottom tile of the shrine though. So I'll put the bottom tile in the "obj" layer and the top tile on the "obj-deco" layer. I'll go over the "obj-deco" and "floor-deco" layers when I get to auto-tiling tesselation. But for now, just know that it won't look like a shrine in game for now:
 
-![collisions gif](https://github.com/WyattHWilliams/Light-Keeper/blob/feat-player-collisions/docs/player-collisions/shrine-bottom.png?raw=true)
+![shrine bottom](https://github.com/WyattHWilliams/Light-Keeper/blob/feat-player-collisions/docs/player-collisions/shrine-bottom.png?raw=true)
+
+Next we use a cool algorithm to detect if two rectangles are touching/overlaping:
+
+```javascript
+collisionDirection(r1, r2) {
+        let dx = (r1.x + r1.width / 2) - (r2.x + r2.width / 2);
+        let dy = (r1.y + r1.height / 2) - (r2.y + r2.height / 2);
+        let width = (r1.width + r2.width) / 2;
+        let height = (r1.height + r2.height) / 2;
+        let crossWidth = width * dy;
+        let crossHeight = height * dx;
+
+        if (Math.abs(dx) <= width && Math.abs(dy) <= height) {
+            if (crossWidth > crossHeight) {
+                return (crossWidth > (-crossHeight)) ? 'up' : 'right';
+            } else {
+                return (crossWidth > -(crossHeight)) ? 'left' : 'down';
+            }
+        }
+    }
+```
 
 </details>
