@@ -53,7 +53,7 @@ The player's candle will dynamically light up the night as they walk around and 
     Top-Down-Movement complete!
     </summary>
     
-![top-down walking gif](https://github.com/WyattHWilliams/Light-Keeper/blob/feat-top-down-movement/docs/top-down-movement/top-down.gif)
+![top-down walking gif](./docs/top-down-movement/top-down.gif)
 
 **How It Was Made:**
 
@@ -61,7 +61,7 @@ After following [this very useful tutorial](https://www.youtube.com/watch?v=H3Fn
 
 The trick to the whole system is using JS to translate the absolutaly fixed player and map elements as you move around. The player never really moves, we actually move the map opposite of the player's input, and then re-draw the player in proper relation to the moved map. The "camera" then hides the overflow, which gives the illusion of player movement!
 
-![img](https://github.com/WyattHWilliams/Light-Keeper/blob/feat-top-down-movement/docs/top-down-movement/Screenshot_1.png)
+![img](https://github.com/WyattHWilliams/Light-Keeper/blob/dev/docs/top-down-movement/Screenshot_1.png)
 
 I seperated input logic, map logic, and player logic into their own classes. This will improve git flow as things get more complicated, but also keep things manageable and tidy-clean for me.
 
@@ -125,7 +125,7 @@ Ok, but why not just a 2d array that stores a bunch of objects? Really just for 
 
 And groovy goomba! After adding some map-gen funcs to our map class:
 
-![tile-map-img](https://github.com/WyattHWilliams/Light-Keeper/blob/feat-tilemap-with-tilesets/docs/tile-map-system/Screenshot_1.png?raw=true)
+![tile-map-img](https://github.com/WyattHWilliams/Light-Keeper/blob/dev/docs/tile-map-system/Screenshot_1.png?raw=true)
 
 
 But these tiles are just divs with a css background color. What about selecting tiles from a tileset??
@@ -159,7 +159,7 @@ makeTile(tile) {
 
 After using this with a new "sidewalk" class we get this:
 
-![sidewalk img](https://github.com/WyattHWilliams/Light-Keeper/blob/feat-tilemap-with-tilesets/docs/tile-map-system/sidewalk.png?raw=true)
+![sidewalk img](https://github.com/WyattHWilliams/Light-Keeper/blob/dev/docs/tile-map-system/sidewalk.png?raw=true)
 
 Then! for artistic reasons, lets use the extra sidewalk tiles I made as variations. A little method here:
 
@@ -198,7 +198,7 @@ And a little css there:
 
 boom:
 
-![variations](https://github.com/WyattHWilliams/Light-Keeper/blob/feat-tilemap-with-tilesets/docs/tile-map-system/variations.png?raw=true)
+![variations](https://github.com/WyattHWilliams/Light-Keeper/blob/dev/docs/tile-map-system/variations.png?raw=true)
 
 **NOTE:** I also did a pretty fun stress-test to see how many fully-tiled layers I could have on-screen at a time before the browser quit. Which was a suprisingly high number. Then I tested the browser's limits with setting each of those tiles to have it's own sprite animation. Again, a surprisingly high limit(that i'm sure also heavily depends on your computer's gusto as well as the browser). The result of many many 8pixel tiles all animating at once was pretty trippy, unfortunately I forgot to take a screenshot before I moved on. (I was also a fool and deleted the branch ...)
 
@@ -209,7 +209,7 @@ boom:
     Player Collisions!
     </summary>
 
-![collisions gif](https://github.com/WyattHWilliams/Light-Keeper/blob/feat-player-collisions/docs/player-collisions/collision.gif?raw=true)
+![collisions gif](https://github.com/WyattHWilliams/Light-Keeper/blob/dev/docs/player-collisions/collision.gif?raw=true)
 
 **How'd it done?**
 
@@ -236,7 +236,7 @@ This entry is for a "shrine" tile to be set onto the "obj" layer of our map div.
 
 However, the shrine object that I drew is actually 2 tiles tall. I only want the player to collide with the bottom tile of the shrine though. So I'll put the bottom tile in the "obj" layer and the top tile on the "obj-deco" layer. I'll go over the "obj-deco" and "floor-deco" layers when I get to auto-tiling tesselation. But for now, just know that it won't look like a shrine in game for now:
 
-![shrine bottom](https://github.com/WyattHWilliams/Light-Keeper/blob/feat-player-collisions/docs/player-collisions/shrine-bottom.png?raw=true)
+![shrine bottom](https://github.com/WyattHWilliams/Light-Keeper/blob/dev/docs/player-collisions/shrine-bottom.png?raw=true)
 
 Next we use a cool algorithm to detect if two rectangles are touching/overlaping:
 
