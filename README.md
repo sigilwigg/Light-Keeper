@@ -333,3 +333,20 @@ if (!checkForCollision(projectedPlacement).includes(held_direction)) {
 I gotta say. I'm really proud of myself for this one. For example, I store the collision directions in a list so that the player can know it's colliding with more than one thing at a time. There are so many little neat tricks that I had to figure out to make this whole process work correctly.
 
 </details>
+
+### Week 2:
+
+<details>
+    <summary>
+    Documentation Fun Times!
+    </summary>
+
+Ok, so this week was really about fixing my git flow and actually documenting what I was doing. The devlog up to this point wasn't written and I MAJORLY screwed up my repo to the point where I just started over.
+
+There are no other entries for week 2 because I didn't have time for much else besides fixing my messy, messy mess.
+
+On the flip side, I'm getting really good git practice in!
+
+</details>
+
+### Week 3:
