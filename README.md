@@ -29,7 +29,7 @@ The player's candle will dynamically light up the night as they walk around and 
 - [X] Player collision
 
 **Lighting**
-- [ ] General Lighting
+- [ ] Area Lighting
 - [ ] Directional Lighting
 
 **Dialouge**
