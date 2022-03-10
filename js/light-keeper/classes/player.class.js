@@ -3,6 +3,8 @@ class Player {
         this.element = _element;
         this.x = _x;
         this.y = _y;
+        this.width = parseInt(getComputedStyle(_element).getPropertyValue('width'));
+        this.height = parseInt(getComputedStyle(_element).getPropertyValue('height'));
         this.collisionBox = _collisionBox
         this.speed = 1;
         this.origin;
