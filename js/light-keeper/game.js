@@ -34,6 +34,7 @@ Inputs.setUpInputEventListeners();
 const step = () => {
     // ----- event phase -----
     player.handleMovement();
+    map.updateLighting();
 
     // ----- draw phase -----
     player.drawSelf();
