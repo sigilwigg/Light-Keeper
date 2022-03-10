@@ -3,6 +3,8 @@ const camera = document.querySelector(".camera");
 const playerElement = document.querySelector(".player");
 const playerCollisionBox = document.querySelector(".player .collision-box");
 const mapElement = document.querySelector(".map");
+const floorLightingElement = document.querySelector(".floor-lighting");
+const objLightingElement = document.querySelector(".obj-lighting");
 const pixelSize = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--pixel-size'));
 
 
@@ -24,7 +26,12 @@ let player = new Player(
 )
 
 // ----- map init -----
-let map = new Map(mapElement, testMapData);
+let map = new Map(
+    mapElement,
+    testMapData,
+    floorLightingElement,
+    objLightingElement
+);
 
 // ----- input init -----
 Inputs.setUpInputEventListeners();
