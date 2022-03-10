@@ -5,6 +5,16 @@ class Player {
         this.y = _y;
         this.collisionBox = _collisionBox
         this.speed = 1;
+        this.origin;
+
+        this.updateOrigin();
+    }
+
+    updateOrigin() {
+        this.origin = {
+            x: (this.x + 8),
+            y: (this.y + 12)
+        }
     }
 
     drawSelf() {
@@ -63,5 +73,11 @@ class Player {
         }
 
         this.element.setAttribute("walking", held_direction ? "true" : "false");
+
+        this.updateOrigin();
+    }
+
+    getTilePosition() {
+        return [Math.floor(this.origin.x / 8), Math.floor(this.origin.y / 8)]
     }
 }
