@@ -47,7 +47,7 @@
    background-position-y: calc( var(--pixel-size) * -16 );
 }
 .player[walking="true"] .spritesheet {
-   animation: walkAnimation 0.4s steps(4) infinite; 
+   animation: walkAnimation 0.5s steps(4) infinite; 
 }
 
 /* ----- idle sprites ----- */
@@ -64,7 +64,36 @@
    background-position-y: calc( var(--pixel-size) * -0 );
 }
 .player[walking="false"] .spritesheet {
-   animation: walkAnimation 0.6s steps(4) infinite; 
+   animation: walkAnimation .5s steps(4) infinite; 
+}
+
+
+/* ========== PLAYER'S LANTERN (SPECIAL) ========== */
+/* ----- spritesheet ----- */
+.player .lantern {
+   z-index: 888;
+   position: absolute;
+   background: url("../../images/lantern.png") no-repeat no-repeat;
+   background-size: 100%;
+   width: calc( var(--cell-size) * 4 );
+   height: calc( var(--cell-size) * 4 );
+}
+
+/* ----- walking sprites ----- */
+.player[facing="right"] .lantern {
+   background-position-y: calc( var(--pixel-size) * -16 );
+}
+.player[facing="up"] .lantern {
+   background-position-y: calc( var(--pixel-size) * -48 );
+}
+.player[facing="left"] .lantern {
+   background-position-y: calc( var(--pixel-size) * -32 );
+}
+.player[facing="down"] .lantern {
+   background-position-y: calc( var(--pixel-size) * 0 );
+}
+.player .lantern {
+   animation: walkAnimation 0.5s steps(4) infinite; 
 }
 
 
