@@ -42,6 +42,6 @@ body {
     width: calc(var(--pixel-size) * 160);
     height: calc(var(--pixel-size) * 144);
     overflow: hidden;
-    background: #61ddf7;
+    background: black;
     position: relative;
 }
