@@ -1,6 +1,15 @@
 class Map {
-    constructor(_element, _mapData) {
+    constructor(
+        _element,
+        _mapData,
+        _floorLightingElement,
+        _objLightingElement
+    ) {
         this.element = _element;
+        this.lighting = {
+            floor: _floorLightingElement,
+            obj: _objLightingElement,
+        }
         this.tiles = {
             floor: {},
             floorDeco: {},
@@ -13,6 +22,13 @@ class Map {
 
     drawSelf() {
         this.element.style.transform = `translate3d( ${-player.x * renderer.pixelSize + renderer.cameraOffsetLeft}px, ${-player.y * renderer.pixelSize + renderer.cameraOffsetTop}px, 0 )`;
+
+        let lightingOffsetLeft = player.x * renderer.pixelSize - renderer.cameraOffsetLeft - (player.width / 2.75);
+        let lightingOffsetRight = player.y * renderer.pixelSize - renderer.cameraOffsetTop - (player.height)
+
+        this.lighting.floor.style.transform = `translate3d( ${lightingOffsetLeft}px, ${lightingOffsetRight}px, 0 )`;
+
+        this.lighting.obj.style.transform = `translate3d( ${lightingOffsetLeft}px, ${lightingOffsetRight}px, 0 )`;
     }
 
     makeTile(tile) {
