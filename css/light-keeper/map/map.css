@@ -29,8 +29,27 @@
 }
 
 .tile-layer.obj {
-    z-index: 2;
+    z-index: 3;
 }
+
+.tile-layer.floor-lighting {
+    z-index: 5;
+    background: radial-gradient(circle, rgba(255,255,255,0) 10%, rgba(0,0,0,.5) 50%);
+    opacity: 1;
+}
+
+.tile-layer.obj-lighting {
+    z-index: 6;
+    background: radial-gradient(circle, rgba(255,255,255,0) 20%, rgba(0,0,0,.95) 50%);
+    opacity: 1;
+}
+
+.tile-layer.floor-lighting, .tile-layer.obj-lighting {
+    position: absolute;
+    width: calc(var(--pixel-size) * 160);
+    height: calc(var(--pixel-size) * 144);
+}
+
 
 
 /* ========== TILES ========== */
