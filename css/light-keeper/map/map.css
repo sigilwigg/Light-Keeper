@@ -28,8 +28,12 @@
     z-index: 1;
 }
 
-.tile-layer.obj {
+.tile-layer.floorLighting {
     z-index: 2;
+}
+
+.tile-layer.obj {
+    z-index: 5;
 }
 
 
@@ -70,6 +74,35 @@
     background-size: 100%;
     width: calc( var(--tile-size) * 4);
     height: calc( var(--tile-size) * 7);
+}
+
+
+/* ========== FLOOR LIGHTING ========== */
+/* ----- lighting tiles ----- */
+.tile .lighting {
+    position: absolute;
+    background: url("../../../images/lighting.png") no-repeat no-repeat;
+    background-size: 100%;
+    width: calc( var(--tile-size) * 4);
+    height: calc( var(--tile-size) * 1);
+    background-position-y: calc( var(--pixel-size) * 0);
+}
+
+/* ----- light levels ----- */
+.tile .lighting[lightLevel = "0"] {
+    background-position-x: calc( var(--pixel-size) * -24);
+}
+
+.tile .lighting[lightLevel = "1"] {
+    background-position-x: calc( var(--pixel-size) * -16);
+}
+
+.tile .lighting[lightLevel = "2"] {
+    background-position-x: calc( var(--pixel-size) * -8);
+}
+
+.tile .lighting[lightLevel = "3"] {
+    background-position-x: calc( var(--pixel-size) * 0);
 }
 
 
