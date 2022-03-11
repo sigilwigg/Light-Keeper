@@ -42,6 +42,8 @@
     z-index: 6;
     background: radial-gradient(circle, rgba(255,255,255,0) 20%, rgba(0,0,0,.95) 50%);
     opacity: 1;
+    
+    animation: light 5s ease-in-out infinite;
 }
 
 .tile-layer.floor-lighting, .tile-layer.obj-lighting {
@@ -50,6 +52,17 @@
     height: calc(var(--pixel-size) * 144);
 }
 
+@keyframes light {
+    0% {
+        opacity: .75;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: .75;
+    }
+}
 
 
 /* ========== TILES ========== */
@@ -95,11 +108,11 @@
 /* ========== VARIATIONS ========== */
 /* ----- sidewalk ----- */
 .sidewalk.v-1 {
-    background-position-x: calc( var(--pixel-size) * 0);
+    background-position-x: calc( var(--pixel-size) * -24);
 }
 .sidewalk.v-2 {
-    background-position-x: calc( var(--pixel-size) * -8);
+    background-position-x: calc( var(--pixel-size) * -32);
 }
 .sidewalk.v-3 {
-    background-position-x: calc( var(--pixel-size) * -16);
+    background-position-x: calc( var(--pixel-size) * -40);
 }
