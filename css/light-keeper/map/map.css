@@ -34,13 +34,13 @@
 
 .tile-layer.floor-lighting {
     z-index: 5;
-    background: radial-gradient(circle, rgba(255,255,255,0) 10%, rgba(0,0,0,.5) 50%);
+    background: radial-gradient(circle, rgba(255,255,255,0) 10%, rgba(0,0,0,.95) 50%);
     opacity: 1;
 }
 
 .tile-layer.obj-lighting {
     z-index: 6;
-    background: radial-gradient(circle, rgba(255,255,255,0) 20%, rgba(0,0,0,.95) 50%);
+    background: radial-gradient(circle, rgba(255,255,255,0) 10%, rgba(0,0,0,1) 30%);
     opacity: 1;
     
     animation: light 5s ease-in-out infinite;
@@ -48,19 +48,19 @@
 
 .tile-layer.floor-lighting, .tile-layer.obj-lighting {
     position: absolute;
-    width: calc(var(--pixel-size) * 160);
-    height: calc(var(--pixel-size) * 144);
+    width: calc(var(--pixel-size) * 208);
+    height: calc(var(--pixel-size) * 160);
 }
 
 @keyframes light {
     0% {
-        opacity: .75;
+        opacity: .85;
     }
     50% {
-        opacity: 0;
+        opacity: .40;
     }
     100% {
-        opacity: .75;
+        opacity: .85;
     }
 }
 
@@ -100,8 +100,8 @@
     position: absolute;
     background: url("../../../images/shrine.png") no-repeat no-repeat;
     background-size: 100%;
-    width: calc( var(--tile-size) * 4);
-    height: calc( var(--tile-size) * 7);
+    width: calc( var(--tile-size) * 10);
+    height: calc( var(--tile-size) * 1);
 }
 
 
