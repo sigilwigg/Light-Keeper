@@ -14,8 +14,8 @@ let renderer = {
     pixelSize: pixelSize,
     tileSize: pixelSize * 8,
     camera: camera,
-    cameraOffsetLeft: pixelSize * 66,
-    cameraOffsetTop: pixelSize * 42,
+    cameraOffsetLeft: pixelSize * 96,
+    cameraOffsetTop: pixelSize * 64,
 }
 
 // ----- player init -----
@@ -41,6 +41,7 @@ Inputs.setUpInputEventListeners();
 const step = () => {
     // ----- event phase -----
     player.handleMovement();
+    map.updateLighting();
 
     // ----- draw phase -----
     player.drawSelf();
