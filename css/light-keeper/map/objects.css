@@ -4,42 +4,47 @@
     background-position-y: calc( var(--pixel-size) * -8);
 }
 
-.obj :nth-child(1)[light-dir="0"] {
+.obj-deco .shrine {
+    background-position-x: calc( var(--pixel-size) * -72);
+    background-position-y: calc( var(--pixel-size) * 0);
+}
+
+.tile .shrine[light-dir="0"] {
     background-position-x: calc( var(--pixel-size) * 0);
 }
 
-.obj :nth-child(1)[light-dir="1"] {
+.tile .shrine[light-dir="1"] {
     background-position-x: calc( var(--pixel-size) * -72);
 }
 
-.obj :nth-child(1)[light-dir="B"] {
+.tile .shrine[light-dir="B"] {
     background-position-x: calc( var(--pixel-size) * -40);
 }
 
-.obj :nth-child(1)[light-dir="T"] {
+.tile .shrine[light-dir="T"] {
     background-position-x: calc( var(--pixel-size) * -16);
 }
 
-.obj :nth-child(1)[light-dir="L"] {
+.tile .shrine[light-dir="L"] {
     background-position-x: calc( var(--pixel-size) * -64);
 }
 
-.obj :nth-child(1)[light-dir="R"] {
+.tile .shrine[light-dir="R"] {
     background-position-x: calc( var(--pixel-size) * -56);
 }
 
-.obj :nth-child(1)[light-dir="BR"] {
+.tile .shrine[light-dir="BR"] {
     background-position-x: calc( var(--pixel-size) * -32);
 }
 
-.obj :nth-child(1)[light-dir="BL"] {
+.tile .shrine[light-dir="BL"] {
     background-position-x: calc( var(--pixel-size) * -48);
 }
 
-.obj :nth-child(1)[light-dir="TR"] {
+.tile .shrine[light-dir="TR"] {
     background-position-x: calc( var(--pixel-size) * -24);
 }
 
-.obj :nth-child(1)[light-dir="TL"] {
+.tile .shrine[light-dir="TL"] {
     background-position-x: calc( var(--pixel-size) * -8);
 }
