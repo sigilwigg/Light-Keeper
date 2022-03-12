@@ -1,0 +1,217 @@
+:root {
+    --tree: calc( var(--pixel-size) * -8);
+}
+
+/* ========== TREES ========== */
+.tile .tree-green, .tile .tree-purple {
+    position: absolute;
+    background: url("../../../images/trees.png") no-repeat no-repeat;
+    background-size: 100%;
+    width: calc( var(--tile-size) * 30);
+    height: calc( var(--tile-size) * 7);
+}
+
+/* ----- tree green parts ----- */
+/* base */
+.obj .tree-green.base-c {
+    background-position-x: calc( var(--tree) * (1 + (3 * 9)));
+    background-position-y: calc( var(--tree) * 3);
+}
+.obj .tree-green.base-l {
+    background-position-x: calc( var(--tree) * (0 + (3 * 9)));
+    background-position-y: calc( var(--tree) * 3);
+}
+.obj .tree-green.base-r {
+    background-position-x: calc( var(--tree) * (2 + (3 * 9)));
+    background-position-y: calc( var(--tree) * 3);
+}
+
+/* trunk */
+.obj .tree-green.trunk-bot {
+    background-position-x: calc( var(--tree) * (1 + (3 * 9)));
+    background-position-y: calc( var(--tree) * 2);
+}
+.obj-deco .tree-green.trunk-top {
+    background-position-x: calc( var(--tree) * (1 + (3 * 9)));
+    background-position-y: calc( var(--tree) * 1);
+}
+.obj-deco .tree-green.trunk-l {
+    background-position-x: calc( var(--tree) * (0 + (3 * 9)));
+    background-position-y: calc( var(--tree) * 2);
+}
+.obj-deco .tree-green.trunk-r {
+    background-position-x: calc( var(--tree) * (2 + (3 * 9)));
+    background-position-y: calc( var(--tree) * 2);
+}
+
+/* leaves */
+.obj-deco .tree-green.trunk-leaves-l {
+    background-position-x: calc( var(--tree) * (0 + (3 * 9)));
+    background-position-y: calc( var(--tree) * 1);
+}
+.obj-deco .tree-green.trunk-leaves-r {
+    background-position-x: calc( var(--tree) * (2  + (3 * 9)));
+    background-position-y: calc( var(--tree) * 1);
+}
+.obj-deco .tree-green.leaves-l {
+    background-position-x: calc( var(--tree) * (0  + (3 * 9)));
+    background-position-y: calc( var(--tree) * 0);
+}
+.obj-deco .tree-green.leaves-c {
+    background-position-x: calc( var(--tree) * (1  + (3 * 9)));
+    background-position-y: calc( var(--tree) * 0);
+}
+.obj-deco .tree-green.leaves-r {
+    background-position-x: calc( var(--tree) * (2  + (3 * 9)));
+    background-position-y: calc( var(--tree) * 0);
+}
+
+
+/* ----- tree purple parts ----- */
+/* base */
+.obj .tree-purple.base-c {
+    background-position-x: calc( var(--tree) * (1 + (3 * 9)));
+    background-position-y: calc( var(--tree) * 7);
+}
+.obj .tree-purple.base-l {
+    background-position-x: calc( var(--tree) * (0 + (3 * 9)));
+    background-position-y: calc( var(--tree) * 7);
+}
+.obj .tree-purple.base-r {
+    background-position-x: calc( var(--tree) * (2 + (3 * 9)));
+    background-position-y: calc( var(--tree) * 7);
+}
+
+/* trunk */
+.obj .tree-purple.trunk-bot {
+    background-position-x: calc( var(--tree) * (1 + (3 * 9)));
+    background-position-y: calc( var(--tree) * 6);
+}
+.obj-deco .tree-purple.trunk-top {
+    background-position-x: calc( var(--tree) * (1 + (3 * 9)));
+    background-position-y: calc( var(--tree) * 5);
+}
+.obj-deco .tree-purple.trunk-l {
+    background-position-x: calc( var(--tree) * (0 + (3 * 9)));
+    background-position-y: calc( var(--tree) * 6);
+}
+.obj-deco .tree-purple.trunk-r {
+    background-position-x: calc( var(--tree) * (2 + (3 * 9)));
+    background-position-y: calc( var(--tree) * 6);
+}
+
+/* leaves */
+.obj-deco .tree-purple.trunk-leaves-l {
+    background-position-x: calc( var(--tree) * (0 + (3 * 9)));
+    background-position-y: calc( var(--tree) * 5);
+}
+.obj-deco .tree-purple.trunk-leaves-r {
+    background-position-x: calc( var(--tree) * (2 + (3 * 9)));
+    background-position-y: calc( var(--tree) * 5);
+}
+.obj-deco .tree-purple.leaves-l {
+    background-position-x: calc( var(--tree) * (0 + (3 * 9)));
+    background-position-y: calc( var(--tree) * 4);
+}
+.obj-deco .tree-purple.leaves-c {
+    background-position-x: calc( var(--tree) * (1 + (3 * 9)));
+    background-position-y: calc( var(--tree) * 4);
+}
+.obj-deco .tree-purple.leaves-r {
+    background-position-x: calc( var(--tree) * (2 + (3 * 9)));
+    background-position-y: calc( var(--tree) * 4);
+}
+
+
+/* ========== DIRECTIONAL LIGHTING? ========== */
+/* ----- base-c ----- */
+.obj .base-c[light-dir="TL"] {
+    background-position-x: calc( var(--tree) * (1 + (3 * 1)));
+}
+.obj .base-c[light-dir="T"] {
+    background-position-x: calc( var(--tree) * (1 + (3 * 2)));
+}
+.obj .base-c[light-dir="TR"] {
+    background-position-x: calc( var(--tree) * (1 + (3 * 3)));
+}
+.obj .base-c[light-dir="BL"] {
+    background-position-x: calc( var(--tree) * (1 + (3 * 6)));
+}
+.obj .base-c[light-dir="BR"] {
+    background-position-x: calc( var(--tree) * (1 + (3 * 4)));
+}
+.obj .base-c[light-dir="L"] {
+    background-position-x: calc( var(--tree) * (1 + (3 * 8)));
+}
+.obj .base-c[light-dir="R"] {
+    background-position-x: calc( var(--tree) * (1 + (3 * 7)));
+}
+
+/* ----- base-l ----- */
+.obj .base-l[light-dir="TL"] {
+    background-position-x: calc( var(--tree) * (0 + (3 * 1)));
+}
+.obj .base-l[light-dir="T"] {
+    background-position-x: calc( var(--tree) * (0 + (3 * 2)));
+}
+.obj .base-l[light-dir="TR"] {
+    background-position-x: calc( var(--tree) * (0 + (3 * 3)));
+}
+.obj .base-l[light-dir="BL"] {
+    background-position-x: calc( var(--tree) * (0 + (3 * 6)));
+}
+.obj .base-l[light-dir="BR"] {
+    background-position-x: calc( var(--tree) * (0 + (3 * 4)));
+}
+.obj .base-l[light-dir="L"] {
+    background-position-x: calc( var(--tree) * (0 + (3 * 8)));
+}
+.obj .base-l[light-dir="R"] {
+    background-position-x: calc( var(--tree) * (0 + (3 * 7)));
+}
+
+/* ----- base-r ----- */
+.obj .base-r[light-dir="TL"] {
+    background-position-x: calc( var(--tree) * (2 + (3 * 1)));
+}
+.obj .base-r[light-dir="T"] {
+    background-position-x: calc( var(--tree) * (2 + (3 * 2)));
+}
+.obj .base-r[light-dir="TR"] {
+    background-position-x: calc( var(--tree) * (2 + (3 * 3)));
+}
+.obj .base-r[light-dir="BL"] {
+    background-position-x: calc( var(--tree) * (2 + (3 * 6)));
+}
+.obj .base-r[light-dir="BR"] {
+    background-position-x: calc( var(--tree) * (2 + (3 * 4)));
+}
+.obj .base-r[light-dir="L"] {
+    background-position-x: calc( var(--tree) * (2 + (3 * 8)));
+}
+.obj .base-r[light-dir="R"] {
+    background-position-x: calc( var(--tree) * (2 + (3 * 7)));
+}
+
+/* ----- trunk bot ----- */
+.obj .trunk-bot[light-dir="TL"] {
+    background-position-x: calc( var(--tree) * (1 + (3 * 1)));
+}
+.obj .trunk-bot[light-dir="T"] {
+    background-position-x: calc( var(--tree) * (1 + (3 * 2)));
+}
+.obj .trunk-bot[light-dir="TR"] {
+    background-position-x: calc( var(--tree) * (1 + (3 * 3)));
+}
+.obj .trunk-bot[light-dir="BL"] {
+    background-position-x: calc( var(--tree) * (1 + (3 * 6)));
+}
+.obj .trunk-bot[light-dir="BR"] {
+    background-position-x: calc( var(--tree) * (1 + (3 * 4)));
+}
+.obj .trunk-bot[light-dir="L"] {
+    background-position-x: calc( var(--tree) * (1 + (3 * 8)));
+}
+.obj .trunk-bot[light-dir="R"] {
+    background-position-x: calc( var(--tree) * (1 + (3 * 7)));
+}
