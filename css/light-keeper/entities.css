@@ -10,7 +10,7 @@
 /* ========== PLAYER ========== */
 /* ----- basic ----- */
 .player {
-   z-index: 99;
+   z-index: 10;
    width: calc( var(--cell-size) * 1 );
    height: calc( var(--cell-size) * 1 );
    position: absolute;
@@ -71,7 +71,7 @@
 /* ========== PLAYER'S LANTERN (SPECIAL) ========== */
 /* ----- spritesheet ----- */
 .player .lantern {
-   z-index: 888;
+   z-index: 11;
    position: absolute;
    background: url("../../images/lantern.png") no-repeat no-repeat;
    background-size: 100%;
