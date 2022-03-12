@@ -7,14 +7,14 @@ class Map {
     ) {
         this.element = _element;
         this.lighting = {
-            floor: _floorLightingElement,
-            obj: _objLightingElement,
+            "floor": _floorLightingElement,
+            "obj": _objLightingElement,
         }
         this.tiles = {
-            floor: {},
-            floorDeco: {},
-            obj: {},
-            objDeco: {},
+            "floor": {},
+            "floor-deco": {},
+            "obj": {},
+            "obj-deco": {},
         };
 
         this.generateMap(_mapData);
@@ -49,13 +49,13 @@ class Map {
         newTileset.classList.add(`${tile.type}`)
 
         // ----- set tile variation -----
-        /*  this is a class that moves the background
-        *   to a specific tile in the set
-        */
         if (tile.variation == true) {
             let vNum = Math.floor(Math.random() * 3 + 1);
             newTileset.classList.add(`v-${vNum}`);
-        }
+        } else
+            if (typeof (tile.variation) == "string") {
+                newTileset.classList.add(tile.variation);
+            }
 
         // ----- finish and add to map -----
         newTile.append(newTileset);
@@ -88,6 +88,10 @@ class Map {
 
     setObjLightDir(coords, val) {
         this.tiles["obj"][coords].element.firstChild.setAttribute("light-dir", val);
+
+        if (this.tiles["obj"][coords].type == "shrine") {
+            this.tiles["obj-deco"][`${coords[0]},${parseInt(coords[2]) - 1}`].element.firstChild.setAttribute("light-dir", val);
+        }
     }
 
     updateLighting() {
